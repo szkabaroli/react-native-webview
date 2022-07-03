@@ -28,6 +28,8 @@ namespace winrt::ReactNativeWebView::implementation {
 
     ReactWebView2::ReactWebView2(winrt::IReactContext const& reactContext) : m_reactContext(reactContext) {
         m_webView = winrt::WebView2();
+        m_webView.Background(winrt::SolidColorBrush(winrt::Windows::UI::Colors::Transparent()));
+
         this->Content(m_webView);
         RegisterEvents();
     }
